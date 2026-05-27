@@ -1,0 +1,14 @@
+---
+apiVersion: kustomize.toolkit.fluxcd.io/v1
+kind: Kustomization
+metadata:
+  name: demo3-kustomization-s3
+  namespace: flux-system
+spec:
+  interval: 1m0s
+  path: ./
+  prune: true
+  sourceRef:
+    kind: Bucket
+    name: demo3-source-s3
+  targetNamespace: s3votingapp

@@ -1,0 +1,14 @@
+---
+apiVersion: source.toolkit.fluxcd.io/v1
+kind: Bucket
+metadata:
+  name: demo3-source-s3
+  namespace: flux-system
+spec:
+  bucketName: votingapp-alexkonkin-demo21
+  endpoint: s3.amazonaws.com
+  interval: 1m0s
+  provider: aws
+  region: us-east-1
+  secretRef:
+    name: s3-secret
