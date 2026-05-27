@@ -1,0 +1,15 @@
+---
+apiVersion: helm.toolkit.fluxcd.io/v2
+kind: HelmRelease
+metadata:
+  name: demo5-hr-git
+  namespace: flux-system
+spec:
+  chart:
+    spec:
+      chart: Section10_Helm_Charts/demotest
+      reconcileStrategy: ChartVersion
+      sourceRef:
+        kind: GitRepository
+        name: demo5-source-git
+  interval: 1m0s
