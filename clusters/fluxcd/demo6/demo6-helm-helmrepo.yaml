@@ -15,6 +15,9 @@ spec:
       version: 21.1.4
   interval: 1m0s
   values:
+    global:
+      security:
+        allowInsecureImages: true
     image:
       repository: bitnamilegacy/nginx
     service:
