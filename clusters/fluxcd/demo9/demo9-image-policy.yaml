@@ -1,0 +1,12 @@
+---
+apiVersion: image.toolkit.fluxcd.io/v1beta2
+kind: ImagePolicy
+metadata:
+  name: demo9-image-policy
+  namespace: flux-system
+spec:
+  imageRepositoryRef:
+    name: demo9-image-repo
+  policy:
+    semver:
+      range: 1.x.x
