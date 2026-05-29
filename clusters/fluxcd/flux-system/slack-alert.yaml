@@ -1,0 +1,20 @@
+apiVersion: notification.toolkit.fluxcd.io/v1beta3
+kind: Alert
+metadata:
+  name: demo1-slack-alert
+  namespace: flux-system
+spec:
+  eventMetadata:
+    cluster: kind-fluxcd
+    demo: demo1
+  eventSeverity: info
+  eventSources:
+  - kind: GitRepository
+    name: flux-system
+    namespace: flux-system
+  - kind: Kustomization
+    name: flux-system
+    namespace: flux-system
+  providerRef:
+    name: slack-flux-provider
+  summary: Flux notifications for demo1 changes

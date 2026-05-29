@@ -1,0 +1,11 @@
+apiVersion: notification.toolkit.fluxcd.io/v1beta3
+kind: Provider
+metadata:
+  name: slack-flux-provider
+  namespace: flux-system
+spec:
+  secretRef:
+    name: slack-webhook
+  timeout: 15s
+  type: slack
+  username: fluxcd
